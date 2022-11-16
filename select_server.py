@@ -9,6 +9,7 @@ import sys
 
 def run_server(port):
     server_socket = socket.socket()
+    server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     server_socket.bind(('', port))
     server_socket.listen()
 
